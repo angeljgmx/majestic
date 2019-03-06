@@ -1,0 +1,27 @@
+
+/* breadcrumbs */
+.breadcrumb {
+    background: none !important;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* reservacion */
+
+.mesas {
+    border-color: #ccc !important;
+    border-style: solid;
+    border-width: thin;
+}
+
+.mesas i:before{
+    font-size: 48px; 
+}
+
+.mesa-reservada i:before {
+    color: red;
+}
+
+.mesa-reservada {
+    color: red;
+}

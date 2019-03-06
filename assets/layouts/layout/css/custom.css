@@ -1,0 +1,67 @@
+/* here you can put your own css to customize and override the theme */
+
+
+/* Login */
+.lock-form-custom {
+    padding-right: 40px !important;
+}
+
+.form-control-custom {
+    width: 100% !important;
+}
+ 
+.datatable_action {
+    margin-bottom: 6px !important;
+    margin-right: 6px !important;
+    display: block !important;
+    float: left;
+}
+
+.data_table_td_iconfont {
+    text-align: center;
+}
+
+.user_pickture_asmod {
+    padding-bottom: 0px !important;
+}
+
+.user_pick_umas img{
+    margin-top: 20px !important;
+    width: 128px !important;
+    height: 128px !important; 
+}
+
+.nacionalidad {
+    width: 10% !important;
+    float: left;
+}
+
+.cedula {
+    width: 82% !important;
+    float: left;
+    margin-bottom: 4px
+}
+
+.separador {
+    float: left;
+    font-weight: 600;
+    margin-left: 6px;
+    margin-right: 6px;
+    vertical-align: middle !important;
+}
+
+.breadcrumb>li+li:before {
+    padding: 0 5px;
+    content: "/\00a0";
+    
+}
+/*
+.page-breadcrumb {
+    background-color: #ffffff !important;
+}*/
+
+.data_flaticon i:before {
+    text-align: center;
+    font-size: 48px !important;
+    font-weight: 300 !important;
+}

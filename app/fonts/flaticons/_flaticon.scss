@@ -1,0 +1,126 @@
+    /*
+    Flaticon icon font: Flaticon
+    Creation date: 25/02/2019 06:34
+    */
+
+    @font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff2") format("woff2"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+    .fi:before{
+        display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+    }
+
+    .flaticon-disc-jockey:before { content: "\f100"; }
+.flaticon-man:before { content: "\f101"; }
+.flaticon-meeting:before { content: "\f102"; }
+.flaticon-chair:before { content: "\f103"; }
+.flaticon-man-1:before { content: "\f104"; }
+.flaticon-dinner:before { content: "\f105"; }
+.flaticon-partnership:before { content: "\f106"; }
+.flaticon-event:before { content: "\f107"; }
+.flaticon-sofa:before { content: "\f108"; }
+.flaticon-partnership-1:before { content: "\f109"; }
+.flaticon-cafe:before { content: "\f10a"; }
+.flaticon-profession:before { content: "\f10b"; }
+.flaticon-picnic:before { content: "\f10c"; }
+.flaticon-sofa-1:before { content: "\f10d"; }
+.flaticon-sofa-2:before { content: "\f10e"; }
+.flaticon-sofa-3:before { content: "\f10f"; }
+.flaticon-sofa-4:before { content: "\f110"; }
+.flaticon-couch:before { content: "\f111"; }
+.flaticon-sofa-5:before { content: "\f112"; }
+.flaticon-sofa-6:before { content: "\f113"; }
+.flaticon-couch-1:before { content: "\f114"; }
+.flaticon-sofa-7:before { content: "\f115"; }
+.flaticon-sofa-8:before { content: "\f116"; }
+.flaticon-sofa-9:before { content: "\f117"; }
+.flaticon-sofa-10:before { content: "\f118"; }
+.flaticon-couch-2:before { content: "\f119"; }
+.flaticon-sofa-11:before { content: "\f11a"; }
+.flaticon-qr-code:before { content: "\f11b"; }
+.flaticon-tetris:before { content: "\f11c"; }
+.flaticon-tetris-1:before { content: "\f11d"; }
+.flaticon-tetris-2:before { content: "\f11e"; }
+.flaticon-tetris-3:before { content: "\f11f"; }
+.flaticon-table:before { content: "\f120"; }
+.flaticon-puzzle:before { content: "\f121"; }
+.flaticon-tetris-4:before { content: "\f122"; }
+.flaticon-tetris-5:before { content: "\f123"; }
+.flaticon-tetris-6:before { content: "\f124"; }
+.flaticon-tetris-7:before { content: "\f125"; }
+.flaticon-tetris-8:before { content: "\f126"; }
+.flaticon-armchair:before { content: "\f127"; }
+.flaticon-chair-1:before { content: "\f128"; }
+.flaticon-armchair-1:before { content: "\f129"; }
+.flaticon-office-chair:before { content: "\f12a"; }
+    
+    $font-Flaticon-disc-jockey: "\f100";
+    $font-Flaticon-man: "\f101";
+    $font-Flaticon-meeting: "\f102";
+    $font-Flaticon-chair: "\f103";
+    $font-Flaticon-man-1: "\f104";
+    $font-Flaticon-dinner: "\f105";
+    $font-Flaticon-partnership: "\f106";
+    $font-Flaticon-event: "\f107";
+    $font-Flaticon-sofa: "\f108";
+    $font-Flaticon-partnership-1: "\f109";
+    $font-Flaticon-cafe: "\f10a";
+    $font-Flaticon-profession: "\f10b";
+    $font-Flaticon-picnic: "\f10c";
+    $font-Flaticon-sofa-1: "\f10d";
+    $font-Flaticon-sofa-2: "\f10e";
+    $font-Flaticon-sofa-3: "\f10f";
+    $font-Flaticon-sofa-4: "\f110";
+    $font-Flaticon-couch: "\f111";
+    $font-Flaticon-sofa-5: "\f112";
+    $font-Flaticon-sofa-6: "\f113";
+    $font-Flaticon-couch-1: "\f114";
+    $font-Flaticon-sofa-7: "\f115";
+    $font-Flaticon-sofa-8: "\f116";
+    $font-Flaticon-sofa-9: "\f117";
+    $font-Flaticon-sofa-10: "\f118";
+    $font-Flaticon-couch-2: "\f119";
+    $font-Flaticon-sofa-11: "\f11a";
+    $font-Flaticon-qr-code: "\f11b";
+    $font-Flaticon-tetris: "\f11c";
+    $font-Flaticon-tetris-1: "\f11d";
+    $font-Flaticon-tetris-2: "\f11e";
+    $font-Flaticon-tetris-3: "\f11f";
+    $font-Flaticon-table: "\f120";
+    $font-Flaticon-puzzle: "\f121";
+    $font-Flaticon-tetris-4: "\f122";
+    $font-Flaticon-tetris-5: "\f123";
+    $font-Flaticon-tetris-6: "\f124";
+    $font-Flaticon-tetris-7: "\f125";
+    $font-Flaticon-tetris-8: "\f126";
+    $font-Flaticon-armchair: "\f127";
+    $font-Flaticon-chair-1: "\f128";
+    $font-Flaticon-armchair-1: "\f129";
+    $font-Flaticon-office-chair: "\f12a";

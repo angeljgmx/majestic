@@ -1,0 +1,1103 @@
+/*===========================================================================*/
+							/*1680px CSS*/
+/*===========================================================================*/
+@media (max-width: 1680px) {
+.tab-row .nav > li > a {
+	padding: 45px 0;
+}
+.welcome-section .thumb{
+	margin:0;
+	position:relative;
+	right:20px;
+}
+}
+/*===========================================================================*/
+							/*1366px CSS*/
+/*===========================================================================*/
+@media (max-width: 1366px) {
+.welcome-section .thumb {
+	margin: 0 0 0 113px;
+}
+.welcome-section.welcome-section-2 .thumb{
+	margin:0 0 20px 0;
+	left:0;
+}
+.parallax-style_2 a.parallax_logo{
+	right:80px;
+}
+.menu-section:before{
+	display:none;
+}
+.welcome-section .thumb img {
+	width: 100%;
+}
+#banner .caption {
+	top: 190px;
+}
+.home-gallery .img-frame {
+	width: 20%;
+}
+.event-section {
+	padding: 0;
+}
+.copyrights-row{
+	margin:0;
+}
+.event-section .tab-row .nav > li > a {
+	padding: 35px 59px;
+}
+.tab-style-1.menu .img-frame img {
+	width: 100%;
+}
+.tab-row .nav > li > a {
+	font-size: 19px;
+	padding: 35px 100px;
+}
+}
+/*===========================================================================*/
+							/*1280px CSS*/
+/*===========================================================================*/
+@media (max-width: 1280px) {
+#banner .caption {
+	top: 150px;
+}
+#banner .owl-dots {
+	bottom: 20px;
+}
+.tab-style-1::before {
+	bottom: 120px;
+}
+.tab-row .nav > li > a {
+	font-size: 22px;
+	padding: 45px 80px;
+}
+.home-gallery .img-frame {
+	width: 20%;
+}
+.newsletter {
+	padding: 40px 0;
+}
+strong.footer-logo {
+	margin-bottom: 30px;
+}
+#footer {
+	padding: 40px 0;
+}
+.welcome-section .thumb {
+	margin: 0 0 0 68px;
+}
+.welcome-section .thumb img {
+	width: 100%;
+}
+.welcome-section .thumb{
+	margin:0 0 20px 0;
+	left:0;
+}
+.home_2 strong.logo-2{
+	margin:-48px 50px -10px 0;
+}
+.parallax-style_2 a.parallax_logo{
+	right:20px;
+}
+.menu-section:before{
+	display:none;
+}
+.home-gallery-style-2{
+	padding:40px 0 0 0;
+}
+.copyrights-row{
+	margin:0;
+}
+}
+
+
+
+
+/*===========================================================================*/
+							/*767px CSS*/
+/*===========================================================================*/
+@media (max-width: 767px) {
+.top-bar .top-social {
+	position: relative;
+	z-index: 99;
+}
+.top-right-box {
+	position: static;
+	width: 100%;
+	float: left;
+}
+.tl_search_holder {
+	float: left;
+	padding-bottom: 15px;
+}
+strong.logo {
+	top: -9px;
+}
+#nav li {
+	float: none;
+	display: block;
+}
+#nav {
+	position: relative;
+	z-index: 99;
+	background: #000;
+	padding: 20px 0 0 0;
+}
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+	background: none;
+}
+.logo-col {
+	display: none !important;
+}
+#nav li ul {
+	width: 100%;
+	position: static;
+}
+#banner .caption {
+	display: none;
+}
+#banner .owl-dots {
+	bottom: 0;
+}
+.welcome-section .thumb {
+	margin: 0;
+}
+.welcome-section .thumb img {
+	width: 100%;
+}
+.reality-row:before, .bottle-frame {
+	display: none;
+}
+.welcome-section {
+	padding: 0;
+}
+.tab-style-1 .tab-content .box {
+	margin-top: 30px;
+}
+.tab-style-1 .tab-content .box .img-frame img {
+	width: 100%;
+}
+.tab-row .nav {
+	margin: 40px 0 0 0;
+}
+.tab-row .nav > li > a {
+	font-size: 16px;
+	line-height: 16px;
+	padding: 10px 21px;
+}
+.tab-style-2 .nav {
+	padding: 40px 0 0 0;
+	border: 0;
+	text-align: center;
+}
+.tab-style-2 .nav-tabs > li {
+	display: inline-block;
+}
+.tab-style-2 .nav > li > a {
+	font-size: 15px;
+	line-height: 15px;
+	padding: 10px 14px;
+}
+.menu-box {
+	padding: 20px 0 0 0;
+}
+.parallax-section {
+	padding: 100px 0;
+}
+.parallax-section .holder {
+	width: 100%;
+}
+address.align-left {
+	width: 270px;
+	margin: 0;
+	float: right;
+}
+address.align-right {
+	width: 304px;
+	margin: 0;
+}
+.event-section, .newsletter {
+	padding: 40px 0 0 0;
+}
+.event-section .holder {
+	width: 100%;
+}
+.home-gallery {
+	margin: 50px 0 0 0;
+}
+.home-gallery .img-frame {
+	width: 20%;
+}
+strong.footer-logo, #footer address {
+	margin-bottom: 30px;
+}
+#footer {
+	padding: 40px 0;
+}
+.error-page .holder, .error-page form .input-box, .about-section .holder {
+	width: 100%;
+}
+.error-page form strong.title {
+	padding-bottom: 20px;
+}
+.about-section .img-frame img {
+	width: 100%;
+}
+.about-section .img-frame {
+	margin: 0 0 20px 0;
+}
+.bartender-detail form {
+	margin: 50px 0 0 0;
+}
+.map-box .map_canvas {
+	height: 300px;
+}
+.contact-info {
+	padding: 60px 0 0 0;
+	height: auto;
+}
+.contact-section .bartender-detail form strong.title {
+	padding-bottom: 20px;
+}
+.tab-style-1 .tab-content .btm-row-2 span.link {
+	float: left;
+}
+.event-box {
+	margin: 0;
+}
+.event-section .tab-row .nav > li > a {
+	font-size: 15px;
+	padding: 30px 23px;
+}
+.event-section .tab-style-1.menu {
+	margin-bottom: 40px;
+}
+.event-col .thumb, .event-col .thumb img, .event-col .text-col {
+	width: 100%;
+}
+.event-col {
+	margin-bottom: 30px;
+}
+.tab-style-1.menu .img-frame img {
+	width: 100%;
+}
+#tl_side-menu{
+	display:none;
+}
+.home_2 strong.logo-2{
+	margin:0;
+	width:100%;
+	text-align:center;
+}
+.home_2 .top-bar .top-social{
+	float:left;
+}
+.home_2 .navigation .navbar{
+	width:100%;
+	margin:30px 0 0 0;
+}
+.home_2  #banner .caption{
+	display:block;
+	top:40px;
+}
+.home_2 #banner .caption .holder h1{
+	font-size:44px;
+	margin-bottom:10px;
+}
+.welcome-section-2 .text-area{
+	padding:50px 0;
+}
+.services-row .holder{
+	width:100%;
+}
+.welcome-section-2 .thumb{
+	left:0;
+	margin-bottom:20px;
+}
+.services-box{
+	margin-bottom:30px;
+}
+.parallax-style_2 a.parallax_logo{
+	display:none;
+}
+.parallax-style_2 .inner-col{
+	width:100%;
+}
+.parallax-style_2{
+	padding:80px 0;
+}
+.menu-section:before, .menu-section:after{
+	display:none;
+}
+.home-gallery-style-2{
+	padding:40px 0;
+}
+.menu-section{
+	padding:30px 0 0 0;
+}
+.event-style-2 .text-box{
+	margin:0 0 40px 0;
+}
+.video-frame .modal-dialog{
+	width:100%;
+	margin:0;
+	padding:0 20px;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+}
+.event-style-2{
+	padding-bottom:0;
+}
+.footer-col{
+	padding-bottom:30px;
+}
+.footer-col form input[type="text"]{
+	background:#333;
+}
+.copyrights-row{
+	margin:0;
+}
+}
+
+/*===========================================================================*/
+							/*480px CSS*/
+/*===========================================================================*/
+@media (min-width: 320px) and (max-width: 480px) {
+strong.logo {
+	position: static;
+	width: 100%;
+	text-align: center;
+	float: left;
+}
+.home_2 .top-bar strong.time{
+	float:left;
+	width:100%;
+	text-align:center;
+	padding:15px 0;
+	margin:0;
+	border-bottom:1px solid;
+	border-left:0;
+}
+.home_2 .top-bar .top-social{
+	float:left;
+	width:100%;
+}
+.home_2 strong.logo-2{
+	margin:0;
+	width:100%;
+	text-align:center;
+}
+.home_2 .top-bar{
+	margin-bottom:15px;
+}
+.home_2 .top-bar .top-social ul{
+	padding-bottom:10px;
+}
+.home_2 .navigation .navbar, .parallax-style_2 .caption-box{
+	width:100%;
+}
+.home_2 .navigation .navbar{
+	margin:40px 0 0 0;
+}
+.welcome-section-2 .text-area{
+	padding:50px 0;
+}
+.welcome-section-2 .img_frame:before, .welcome-section-2 .img_frame:after, .menu-section:before, .menu-section:after{
+	display:none;
+}
+.welcome-section-2 .img_frame img{
+	width:100%;
+	display:block;
+}
+.services-row .holder, .parallax-style_2 .inner-col, .home-gallery-style-2 .holder, .event-style-2 .holder{
+	width:100%;
+}
+.welcome-section-2 .thumb{
+	left:0;
+}
+.menu-section, .home-gallery-style-2{
+	padding:40px 0;
+}
+.menu-section h2{
+	font-size:56px;
+}
+.menu-section ul li .thumb{
+	margin:0 20px 20px 0;
+}
+.menu-section ul li .text-box{
+	float:left;
+	width:100%;
+}
+.menu-section ul li{
+	padding-bottom:30px;
+}
+.menu-section{
+	background-size:cover;
+}
+.parallax-style_2{
+	padding:100px 0;
+}
+.parallax-style_2 span{
+	font-size:39px;
+}
+.parallax-style_2 strong.title{
+	font-size:45px;
+	line-height:50px;
+}
+.event-style-2 .text-box{
+	margin:0 0 30px 0;
+}
+.video-frame .modal-dialog{
+	width:100%;
+	margin:0;
+	padding:0 15px;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+}
+.services-box{
+	margin-bottom:20px;
+}
+.footer-col{
+	margin-bottom:20px;
+}
+.footer-col form input[type="text"]{
+	background:#333;
+}
+.copyrights-row{
+	margin:0;
+}
+.copyrights-row strong.copy{
+	font-size:12px;
+	text-align:center;
+	width:100%;
+	margin-bottom:10px;
+}
+.copyrights-row a.copmany{
+	width:100%;
+	text-align:center;
+}
+.welcome-section.welcome-section-2 .thumb{
+	margin-bottom:20px;
+}
+.parallax-style_2 a.parallax_logo{
+	display:none;
+}
+#tl_side-menu{
+	display:none;
+}
+.tab-style-1.menu .img-frame img {
+	width: 100%;
+}
+.tab-row p {
+	padding: 0;
+}
+.event-section .tab-row .nav > li > a {
+	padding: 14px 20px;
+}
+.event-section .tab-style-1.menu {
+	margin-bottom: 20px;
+}
+.event-col .thumb img {
+	width: 100%;
+}
+.event-col .text-col {
+	width: 100%;
+}
+.event-section .event-col .text-col strong.date {
+	right: 0;
+}
+.event-col .text-col .share {
+	width: 100%;
+	margin: 0 0 20px 0;
+}
+.event-col {
+	margin-bottom: 40px;
+}
+.tab-style-1 .tab-content .btm-row-2 span.link {
+	float: left;
+}
+.event-col .text-col a.btn-book {
+	width: 110px;
+	height: 40px;
+	font-size: 12px;
+	margin: 0 5px
+}
+.map-box .map_canvas {
+	height: 300px;
+}
+.contact-info {
+	height: auto;
+	padding: 50px 0 0 0;
+}
+.blog-section .video-frame iframe {
+	height: 280px !important;
+}
+.pagination-box .pagination {
+	margin: 0 0 40px 0;
+}
+.about-section .img-frame img, .bartender-detail form textarea {
+	width: 100%;
+}
+#footer strong.copyrights {
+	line-height: 24px;
+}
+.bartender-detail form strong.title {
+	line-height: 30px;
+	padding-bottom: 20px;
+}
+.contact-section .bartender-detail form strong.title {
+	font-size: 24px;
+}
+.about-section .img-frame {
+	margin-bottom: 20px;
+}
+.error-page {
+	background-size: 100%;
+	padding: 80px 0;
+}
+.error-page .holder {
+	width: 100%;
+}
+.error-page h1 {
+	font-size: 70px;
+}
+.error-page form .input-box {
+	width: 100%;
+}
+.error-page form strong.title {
+	font-size: 27px;
+	padding-bottom: 15px;
+}
+.error-page form .input-box input[type="submit"] {
+	font-size: 14px;
+	padding: 0 20px;
+}
+#inner-banner {
+	padding: 80px 0;
+	margin-bottom: 40px;
+}
+.about-section .holder {
+	width: 100%;
+}
+#inner-banner h1 {
+	font-size: 40px;
+}
+.top-bar {
+	text-align: center;
+}
+.top-bar strong.time {
+	float: none;
+	display: inline-block;
+}
+.top-bar .top-social {
+	float: none;
+	display: block;
+	width: 100%;
+}
+.top-bar .top-social strong.title {
+	float: none;
+	display: inline-block;
+	text-align: center;
+}
+.top-bar .top-social ul {
+	float: none;
+	display: block;
+	text-align: center;
+}
+.top-bar .top-social ul li {
+	float: none;
+	display: inline-block;
+}
+.top-right-box {
+	position: static;
+	width: 100%;
+	padding: 20px 0;
+	float: left;
+	width: 100%;
+}
+.tl_search_holder {
+	float: left;
+}
+.tl_search_inner {
+	width: 100%;
+}
+.tl_search_inner {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+#banner .owl-dots, .logo-col {
+	display: none !important;
+}
+#banner .caption {
+	display: none;
+}
+#nav li {
+	float: none;
+	display: block;
+}
+#nav li ul {
+	width: 100%;
+	position: static;
+}
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+	background: none;
+}
+.welcome-section .thumb img {
+	width: 100%;
+}
+.reality-row .text-col {
+	width: 100%;
+	margin: 20px 0;
+}
+.reality-row:before {
+	display: none;
+}
+.welcome-section {
+	padding: 0;
+}
+.tab-style-1 .tab-content .box {
+	margin-top: 30px;
+}
+.bottle-frame {
+	display: none;
+}
+.tab-row .nav {
+	margin: 30px 0 0 0;
+	text-align: center;
+}
+.tab-row .nav-tabs > li {
+	border: 0;
+	float: none;
+	display: inline-block;
+}
+.tab-row .nav > li > a {
+	font-size: 14px;
+	padding: 10px 13px;
+}
+.tab-style-2 .nav {
+	padding: 0;
+	border: 0;
+}
+.tab-style-2 .nav-tabs > li {
+	text-align: center;
+	display: inline-block;
+}
+.tab-style-2 .nav > li > a {
+	font-size: 12px;
+	line-height: 12px;
+	padding: 10px 13px;
+}
+.menu-box {
+	padding: 30px 0 0 0;
+}
+.menu-box .text-col, .parallax-section .holder {
+	width: 100%;
+}
+.menu-box .img-frame {
+	display: none;
+}
+.parallax-section {
+	padding: 80px 0;
+}
+.parallax-section strong.title {
+	font-size: 45px;
+}
+address.align-right {
+	width: 100%;
+	margin: 0;
+}
+.event-section .holder {
+	width: 100%;
+}
+.event-section .center-block:before {
+	display: none;
+}
+.event-section {
+	padding: 40px 0;
+}
+.newsletter h2 {
+	font-size: 28px;
+	line-height: 35px;
+}
+.newsletter strong.title {
+	padding-bottom: 10px;
+}
+.newsletter {
+	padding: 40px 0;
+}
+#footer {
+	padding: 50px 0;
+}
+strong.footer-logo, #footer address {
+	margin-bottom: 30px;
+}
+.welcome-section .thumb {
+	margin: 0;
+}
+.home-gallery .img-frame {
+	width: 100%;
+}
+address.align-left {
+	width: 100%;
+	margin: 0;
+}
+.tab-style-1 .tab-content .box .img-frame img {
+	width: 100%;
+}
+}
+
+
+
+
+/*===========================================================================*/
+						/*768px And 992px CSS*/
+/*===========================================================================*/
+@media (min-width: 768px) and (max-width: 992px) {
+#nav li a {
+	font-size: 12px;
+	line-height: 12px;
+	padding: 0 12px;
+}
+.home_2 strong.logo-2{
+	margin:10px 0 0 0;
+}
+.home_2 .top-bar .top-social{
+	float:left;
+}
+.home_2 .navigation .navbar{
+	width:100%;
+	margin:20px 0 0 0;
+}
+.home_2 #banner .caption .holder h1{
+	font-size:53px;
+}
+.welcome-section-2 .img_frame:before, .welcome-section-2 .img_frame:after{
+	display:none;
+}
+.welcome-section-2 .img_frame img{
+	display:block;
+	width:100%;
+}
+.welcome-section-2 .text-area{
+	padding:0;
+}
+.welcome-section-2.welcome-section{
+	padding:40px 0 0 0;
+}
+.welcome-section.welcome-section-2 .thumb{
+	left:0;
+	margin:0 0 20px 0;
+}
+.services-box{
+	padding-bottom:40px;
+}
+.parallax-style_2 a.parallax_logo{
+	right:0;
+}
+.parallax-style_2 .inner-col{
+	width:100%;
+}
+.menu-section ul li .text-box .inner{
+	width:100%;
+}
+.menu-section:before, .menu-section:after{
+	display:none;
+}
+.menu-section{
+	padding:40px 0 0 0;
+}
+.video-frame .modal-dialog{
+	width:100%;
+	margin:0;
+	padding:0 20px;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+}
+.event-style-2 .text-box{
+	margin:0;
+}
+.video-frame:before, .video-frame:after{
+	display:none;
+}
+#tl_side-menu{
+	display:none;
+}
+.tab-style-1.menu .img-frame img {
+	width: 100%;
+}
+.parallax-section {
+	margin-bottom: 50px;
+}
+.tab-style-1 .tab-content .btm-row-2 span.link {
+	width: 10%;
+	float: left;
+}
+.event-col .text-col .share {
+	width: 100%;
+	margin: 0 0 20px 0;
+}
+.event-col .text-col a.btn-book {
+	margin: 0 5px;
+	width: 140px;
+}
+.event-section .tab-row .nav > li > a {
+	padding: 30px 40px;
+	font-size: 15px;
+}
+.event-col .text-col {
+	padding: 100px 25px 30px 14px;
+}
+.event-section .tab-style-1.menu {
+	margin-bottom: 30px;
+}
+.event-col .thumb, .event-col .thumb img, .event-col .text-col {
+	width: 100%;
+}
+.event-section .event-col .text-col strong.date {
+	right: 0;
+}
+.pagination-box {
+	margin-bottom: 40px;
+}
+.about-section .img-frame img {
+	width: 100%;
+}
+.bartender-detail form input[type="text"] {
+	position: relative;
+	z-index: 99;
+}
+.error-page .holder {
+	width: 100%;
+}
+.error-page form strong.title {
+	padding-bottom: 20px;
+}
+.error-page form .input-box {
+	width: 100%;
+}
+#inner-banner {
+	padding: 100px 0 80px 0;
+}
+.about-section .holder {
+	width: 100%;
+}
+.logo-col {
+	width: 204px;
+}
+.burger-nav {
+	display: none;
+}
+#banner .caption {
+	top: 76px;
+}
+#banner .caption .holder {
+	width: 100%;
+	padding: 0 20px;
+}
+#banner .caption .holder span {
+	padding: 0;
+}
+#banner .caption .holder h1 {
+	font-size: 46px;
+	line-height: 35px;
+}
+#banner .caption .holder h1 b {
+	font-size: 113px;
+}
+#banner .owl-dots {
+	bottom: -8px;
+}
+.welcome-section .thumb {
+	margin: 0 0 0 22px;
+}
+.welcome-section .thumb img {
+	width: 100%;
+}
+.reality-row .text-col {
+	margin: 30px 54px 0;
+	width: 300px;
+}
+.reality-row:before {
+	bottom: 64px;
+}
+.welcome-section {
+	padding: 20px 0 0 0;
+}
+.bottle-frame img {
+	width: 100%;
+}
+.bottle-frame {
+	margin: 430px 0 0 0;
+}
+.tab-row .nav {
+	border: 0;
+}
+.tab-row .nav > li > a {
+	font-size: 18px;
+	padding: 15px 30px;
+}
+.tab-style-1:before {
+	bottom: 56px;
+}
+.tab-style-1 .tab-content h2 {
+	font-size: 20px;
+}
+.tab-style-2 .nav {
+	padding: 40px 0 0 0;
+	border: 0;
+}
+.tab-style-2 .nav-tabs > li {
+	float: left;
+}
+.tab-style-2 .nav > li > a {
+	padding: 10px 17px;
+	font-size: 18px;
+	line-height: 18px;
+}
+.menu-box {
+	padding-top: 20px;
+}
+.menu-box .img-frame {
+	display: none;
+}
+.parallax-section {
+	padding: 100px 0;
+}
+.event-section .holder {
+	width: 100%;
+}
+.home-gallery .img-frame {
+	width: 20%;
+}
+.home-gallery .img-frame .caption .holder a.link {
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 15px;
+}
+.newsletter {
+	padding: 50px 0;
+}
+#footer {
+	padding: 0 0 30px 0;
+}
+strong.footer-logo, #footer address {
+	margin-bottom: 30px;
+}
+}
+
+
+
+
+/*===========================================================================*/
+							/*1199px CSS*/
+/*===========================================================================*/
+@media (min-width: 993px) and (max-width: 1199px) {
+#nav li a {
+	font-size: 13px;
+	line-height: 13px;
+	padding: 0 15px;
+}
+.pagination-box {
+	margin-bottom: 40px;
+}
+.home_2 strong.logo-2{
+	margin:-48px 18px -10px 0;
+}
+.home_2 #banner .caption .holder h1{
+	line-height:85px;
+}
+.welcome-section-2 .img_frame img{
+	width:100%;
+}
+.event-time-box .countdown-amount {
+	font-size: 20px;
+}
+.tab-style-1.menu .img-frame img {
+	width: 100%;
+}
+.parallax-section {
+	margin-bottom: 40px;
+}
+.event-time-box .countdown-period {
+	font-size: 15px;
+}
+.parallax-style_2{
+	padding:180px 0;
+}
+.menu-section:before, .menu-section:after{
+	display:none;
+}
+.menu-section{
+	padding:40px 0 0 0;
+}
+.home-gallery-style-2{
+	padding:40px 0;
+}
+.copyrights-row{
+	margin:0;
+}
+.event-time-box .countdown-section {
+	margin: 0 10px 0 0;
+	width: 70px;
+}
+.parallax-style_2 a.parallax_logo{
+	right:80px;
+}
+.welcome-section.welcome-section-2 .thumb{
+	margin:0 0 20px 0;
+	left:0;
+}
+.event-section .tab-row .nav > li > a {
+	padding: 30px 53px;
+}
+.event-col .thumb, .event-col .thumb img, .event-col .text-col, .error-page form .input-box, .welcome-section .thumb img, .bottle-frame img {
+	width: 100%;
+}
+.error-page .holder {
+	width: 100%;
+}
+.error-page form strong.title {
+	padding-bottom: 20px;
+}
+#banner .caption {
+	top: 100px;
+}
+#banner .owl-dots {
+	bottom: 0;
+}
+.welcome-section .thumb {
+	margin: 0 0 0 40px;
+}
+.event-section {
+	padding: 0;
+}
+.reality-row .text-col {
+	width: 360px;
+}
+.event-col {
+	margin-bottom: 40px;
+}
+.tab-row .nav > li > a {
+	font-size: 20px;
+	padding: 30px 55px;
+}
+.tab-style-1:before {
+	bottom: 87px;
+}
+.menu-box .img-frame {
+	display: none;
+}
+.home-gallery .img-frame {
+	width: 20%;
+}
+.newsletter {
+	padding: 40px 0;
+}
+#footer {
+	padding: 0 0 40px 0;
+}
+}

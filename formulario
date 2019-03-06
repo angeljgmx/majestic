@@ -1,0 +1,108 @@
+<form id="form_prtp" name="footer_quick_contact_form" class="quick-contact-form" action="includes/quickcontact.php" method="post"  data-parsley-excluded="input[type=button], input[type=submit], input[type=reset], input[type=hidden], [disabled], :hidden" data-parsley-trigger="keyup" data-parsley-validate>
+                            <div class="form-group col-md-12">
+                                <label>Primer Nombre:</label>
+                                <input id="prtp_nom1" name="prtp_nom1" type="text" class="form-control" required placeholder="Ingrese su primer nombre" data-parsley-pattern="^[A-Za-z]*$" data-parsley-error-message="Debe ingresar caracteres alfabeticos solamente"/>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label>Segundo Nombre:</label>
+                                <input id="prtp_nom2" name="prtp_nom2" type="text" class="form-control" required="" placeholder="Ingrese su segundo nombre" >
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label>Primer Apellido:</label>
+                                <input id="prtp_apl1" name="prtp_apl1" type="text" class="form-control" required placeholder="Ingrese su primer apellido" >
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label>Segundo Apellido:</label>
+                                <input id="prtp_apl2" name="prtp_apl2" type="text" class="form-control" required placeholder="Ingrese su segundo apellido" >
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label>Fecha de Nacimiento:</label>
+                                <input id="prtp_fnac" name="prtp_fnac" class="form-control date-picker" type="text" placeholder="Ingrese su fecha de nacimiento" required >
+                            </div>
+
+                            <div class="form-group col-md-12">
+                                <label>Nacionalidad:</label>
+                                <select id="prtp_ncld" name="prtp_ncld" class="col-md-3 form-control" required>
+                                    <option value="">--- Seleccione una opci&oacute;n ---</option>
+                                    <option value="V">Venezolano</option>
+                                    <option value="E">Extranjero</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label>N&uacute;mero de C&eacute;dula:</label>
+                                <input id="prtp_cdla" name="prtp_cdla" type="text" class="form-control" required placeholder="Ingrese su n&uacute;mero de c&eacute;dula de identidad" data-parsley-type="digits"/>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label>Sexo: &nbsp;</label>
+                                <label class="radio-inline radiobt"><input type="radio" id="prtp_sexo" name="prtp_sexo"  value="F" required />Femenino </label>
+                                <label class="radio-inline radiobt"><input type="radio" id="prtp_sexo" name="prtp_sexo"  value="M" />Masculino</label>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label>N&uacute;mero Tel&eacute;fonico:</label>
+                                <input id="prtp_tlfn" name="prtp_tlfn" type="tel" class="form-control" required placeholder="Ingrese su n&uacute;mero telef&oacute;nico" />
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label>Email:</label>
+                                <input id="prtp_mail" name="prtp_mail" type="email" class="form-control" required placeholder="Ingrese su direcci&oacute;n de correo electr&oacute;nico" />
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label>Direcci&oacute;n:</label>
+                                <textarea id="prtp_dirc" name="prtp_dirc" class="form-control" required placeholder="Ingrese la direcci&oacute;n completa donde reside actualmente" rows="4" /></textarea>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label>Nivel Educativo:</label>
+                                <select id="prtp_nvle" name="prtp_nvle" class="col-md-3 form-control" required>
+                                    <option value="">--- Seleccione una opci&oacute;n ---</option>
+                                    <?php
+                                    $sql_scla = "SELECT * FROM tbla_scla WHERE scla_estd = 1";
+                                    $query_scla = $conec->dbQuery($sql_scla, $debug);  
+                                    
+                                    while ($datos_scla = $conec->dbFetchObjet($query_scla)){
+                                        echo "<optgroup label=\"".$datos_scla->scla_nomb."\"> \n";
+                                        
+                                        $sql_nvle = "SELECT * FROM tbla_nvle WHERE (nvle_estd = 1) AND (nvle_scla = ".$datos_scla->id.")";
+                                        $query_nvle = $conec->dbQuery($sql_nvle, $debug);
+                                        
+                                        while ($datos_nvle= $conec->dbFetchObjet($query_nvle)){
+                                            echo "<option value=\"".$datos_nvle->id."\">".$datos_nvle->nvle_nomb."</option> \n";
+                                        }
+                                        echo "</optgroup> \n";
+                                    }                                    
+                                    ?>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label>Profesi&oacute;n:</label>
+                                <input id="prtp_prof" name="prtp_prof" type="text" class="form-control" required placeholder="Ingrese su profesi&oacute;n" />
+                            </div>
+                             
+                            <div class="form-group col-md-12">
+                                <label>Instituciones Musicales:</label>
+                                <textarea name="prtp_inte" class="form-control" required placeholder="Agregue a continuaci&oacute;n las instituciones musicales a las cuales pertenece" rows="6"></textarea>
+                            </div>
+                            
+                            <div class="form-group col-md-12">
+                                <label>Contrase&ntilde;a:</label>
+                                <input id="prtp_pas1" name="prtp_pass" type="password" class="form-control" required placeholder="Ingrese su contrase&ntilde;a" 
+                                data-parsley-minlength="8" 
+                                data-parsley-required-message="Please enter your new password." 
+                                data-parsley-uppercase="1" data-parsley-lowercase="1"
+                                data-parsley-number="1"
+                                data-parsley-special="1"
+                                data-parsley-required />
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label>Repita su Contrase&ntilde;a:</label>
+                                <input id="prtp_pas2" name="prtp_pass" type="password" class="form-control password" required placeholder="Repita su contrase&ntilde;a"
+                                data-parsley-minlength="8"
+                                data-parsley-required-message="Please re-enter your new password."
+                                data-parsley-equalto="#password1"
+                                data-parsley-required >
+                            </div>
+                            
+                          <div class="form-group col-md-12">
+                            <input name="form_botcheck" class="form-control" type="hidden" value="1" />
+                            <button type="submit"  class="btn btn-dark btn-theme-colored2"><i class="fa fa-send"></i> Enviar</button>
+                            <button type="reset"  class="btn btn-dark ml-10"><i class="fa fa-eraser"></i> Borrar</button>
+                          </div>
+                        </form>

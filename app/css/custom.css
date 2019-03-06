@@ -1,0 +1,334 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 24-ene-2019, 2:23:22
+    Author     : angel
+*/
+
+
+/* backgrounds */
+.bg_dark {
+    background-color: #1F1F1F !important;
+}
+
+.bg_gold {
+    background-color: #C5A059 !important;
+}
+
+.button_dark {
+    background-color: #1F1F1F !important;
+}
+
+.button_dark:hover {
+    background-color: #1F1F1F !important;
+    color: #c5a059 !important;
+}
+
+/* font colors */
+.font_white {
+    color: #FFFFFF !important;
+}
+
+.font_ccc {
+    color: #ccc !important;
+}
+
+.font_gold {
+    font: 400 24px/24px 'Dancing Script', cursive !important;
+    color: #c5a059 !important;
+}
+
+.font_gold_negative {
+    font: 400 24px/24px 'Dancing Script', cursive;
+    color: #222 !important;
+}
+
+.font_dark {
+    font: 400 24px/24px 'Open Sans', sans-serif;
+    color: #222;
+    text-transform: uppercase;
+}
+
+.font_color_dark {
+    font: 400 24px/24px 'Open Sans', sans-serif;
+    color: #222;
+}
+
+.no_border_bottom {
+    border-bottom: none !important;
+}
+
+.no_border_top {
+    border-top: none !important;
+}
+
+.modal-body img{
+    width: 100%;
+}
+
+.button_rsrv {
+    color: #c5a059 !important;
+    border-color: #c5a059 !important;
+    border-style: solid;
+    border-width: thin;
+}
+
+.button_rsrv:hover {
+    color: #ffffff !important;
+    border-color: #ffffff !important;
+}
+
+.md_hdft {
+    border-color: #c5a059 !important;
+}
+
+.login {
+	display: block;
+	}
+
+.login input[type="text"], input[type="password"], input[type="email"] {
+	width: 100%;
+	height: 50px;
+	border: 1px solid;
+	background: none;
+	padding: 0 15px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	color: #fff;
+        border-color:#c5a059;
+}
+
+.login label {
+    color: #ccc;
+}
+
+.login button {
+    background: #c5a059;
+    display: inline-block;
+    border: 0;
+    font: 400 14px 'Open Sans', sans-serif;
+    color: #000;
+    width: 100%;
+}
+
+.login_note i:before{
+    color: #c5a059;
+    font-size: 64px;
+    float: right;
+    display: table-cell;
+    margin-top: 20px;
+}
+
+.login_note p {
+    display: inline-block;
+    width: 70%;
+    margin-left: 10px;
+}
+
+.login_note i {
+    
+}
+
+/* reservacion */
+
+.mesas {
+    border-color: #ccc !important;
+    border-style: solid;
+    border-width: thin;
+}
+
+.mesas i:before{
+    font-size: 48px; 
+    color: #c5a059;
+    margin-left: -10px;
+}
+
+.mesa-reservada i:before {
+    color: red;
+}
+
+.mesa-reservada {
+    color: red;
+}
+
+.reservar_title {
+    text-align: left !important;
+}
+
+.reservar_fecha {
+    font: 400 18px/18px 'Open Sans', sans-serif;
+    color: #fff;
+    float: left;
+    padding: 10px 0;
+    width: 100%;
+}
+
+.reservar select, button {
+    float: left;
+    font: 300 16px/16px 'Open Sans', sans-serif;
+    color: #fff;
+    padding: 14px 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #1f1f1f;
+    margin: 0 0 0 30px;
+    border: none;
+}
+
+.login_index {
+    width: 100%;
+    background: #000 url(../images/welcome-bg.jpg) repeat-y left top;
+    margin-bottom: 40px;
+}
+
+.footer_index address {
+	float: left;
+	width: 100%;
+	text-align: center;
+	margin: 0 0 60px 0;
+}
+.footer_index address p {
+	font: 400 24px 'Open Sans', sans-serif;
+	text-align: center;
+	margin: 0;
+        color: #c5a059;
+}
+.footer_index address p a{
+        color: #c5a059;
+}
+.footer_index address p span {
+	display: block;
+	color: #fff;
+}
+.footer_index address p a {
+	text-decoration: none;
+}
+.footer_index strong.copyrights {
+	display: block;
+	text-align: center;
+	font: 400 18px/18px 'Open Sans', sans-serif;
+	color: #ccc;
+	padding: 0 0 50px 0;
+}
+.footer_index strong.copyrights a {
+	text-decoration: none;
+}
+
+.index_footer_social {
+    z-index: 1002 !important;
+}
+
+.color_gold {
+    color: #c5a059 !important;
+}
+
+.promo_desc {
+    font-size: 20px;
+    color: #FFFFFF;
+}
+
+.promo_title {
+    font-size: 64px;
+}
+
+.evnt_actual_info {
+    height: 500px;
+}
+
+.evnt_actual_text {
+    height: 436px;
+}
+
+.evnt_title {
+    line-height: 1.2 !important;
+}
+
+.plano_majestic {
+    width: 100%;
+    background-image: url("../../uploads/imagenes/plano/planta_majestic.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.plano_majestic td {
+/*    width: 48px;
+    height: 40px;*/
+    text-align: center;
+    padding: 0;
+    margin: 0;
+
+}
+
+.plano_majestic i:before{
+    font-size: 28px;
+}
+
+.mesa_nmro {
+    font-size: 10px;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.rsrv_dtll {
+    padding-top: 10px;
+    font: 400 12px 'Open Sans', sans-serif;
+    color: #FFFFFF;
+    display: block;
+}
+
+.no-bg {
+    background: none !important;
+}
+
+.woodbg {
+    background: #000 url(../images/welcome-bg.jpg) no-repeat left top/cover;
+}
+
+.evnt_inicio h2{
+    line-height: 1.2 !important;
+}
+
+.evnt_inicio a:hover{
+    text-decoration: none !important;
+}
+
+.evnt_inicio_fech {
+    color: #ccc !important;
+}
+
+.evnt_inicio_fech:hover {
+    color: #222 !important;
+}
+
+.parallax-section-movil {
+	float: left;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-size: cover;
+	-moz-background-size: cover;
+	-ms-background-size: cover;
+	-o-background-size: cover;
+	-webkit-background-size: cover;
+	padding: 150px 0;
+}
+.parallax-section-movil .holder {
+	width: 670px;
+	margin: 0 auto
+}
+.parallax-section-movil strong.title {
+	display: block;
+	text-align: center;
+	font: 400 100px 'Dancing Script', cursive;
+	padding: 0 0 30px 0;
+}
+.parallax-section-movil strong.title span {
+	color: #fff;
+}
+.parallax-section-movil address {
+	margin: 0 15px;
+}
