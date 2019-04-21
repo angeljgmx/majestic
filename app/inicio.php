@@ -52,7 +52,10 @@
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
    
     // Validacion de la session
-    if (SessionValidateUser($path, "user")){
+    if (isset($_SESSION['user_sson']) && ($_SESSION['user_sson'] == TRUE)){
+        
+        // Tasa de cambio
+        $_SESSION['tasa_cdgo'] = "VE";
         ?>
 
         <!-- Reservaciones -->
@@ -65,15 +68,15 @@
         $query_evnt_hoy = $conec->dbQuery($sql_evnt_hoy, $debug);
         $nevnt_hoy = $conec->dbNumRows($query_evnt_hoy);
         
-        if (($nevnt_hoy > 0 ) && ($_SESSION['modl_show'] != TRUE)){
+        if (($nevnt_hoy > 0 ) && (@$_SESSION['modl_show'] != TRUE)){
             
-            $datos_evnt = $conec->dbFetchObjet($query_evnt);
+            $datos_evnt = $conec->dbFetchObjet($query_evnt_hoy);
             
-            $sql_rsrv = "SELECT tbla_rsrv.id AS rsrv_id, rsrv_mesa, rsrv_evnt, rsrv_user, rsrv_acmp, rsrv_estd, "
+            $sql_rsrv = "SELECT tbla_rsrv.id AS rsrv_id, rsrv_mesa, rsrv_evnt, rsrv_user, rsrv_estd, "
                 ."tbla_mesa.id AS mesa_id, mesa_mstp, mesa_nmro, mesa_cpcd, mesa_cori, mesa_corj, mesa_msvp, mesa_estd, "
                 ."tbla_mstp.id AS mstp_id, mstp_nomb, mstp_icon, "
                 ."tbla_msvp.id AS msvp_id, msvp_nomb, "
-                ."tbla_user.id AS user_id, user_nomb, user_apll, user_ndni, user_sexo, "
+                ."tbla_user.id AS user_id, user_nomb, user_apll, user_ndni, user_tlef, user_sexo, "
                 ."tbla_evnt.id AS evnt_id, evnt_ttlo, evnt_fech, evnt_imgn "
                 ."FROM tbla_rsrv "
                 ."INNER JOIN tbla_mesa ON (tbla_mesa.id = rsrv_mesa) "
@@ -81,9 +84,10 @@
                 ."INNER JOIN tbla_msvp ON (tbla_msvp.id = mesa_msvp) "
                 ."INNER JOIN tbla_user ON (tbla_user.id = rsrv_user) "
                 ."INNER JOIN tbla_evnt ON (tbla_evnt.id = rsrv_evnt) "
-                ."WHERE (rsrv_user = ".$_SESSION['sson_idpr'].") AND (tbla_evnt.id = ".$datos_evnt->evnt_id.") AND (evnt_estd = 1) AND (rsrv_estd = 1)";
+                ."WHERE (rsrv_user = ".$_SESSION['sson_idpr'].") AND (tbla_evnt.id = ".$datos_evnt->id.") AND (evnt_estd = 1) AND (rsrv_estd = 1)";
             $query_rsrv = $conec->dbQuery($sql_rsrv, $debug);
             $nrsrv = $conec->dbNumRows($query_rsrv);
+            
             if ($nrsrv > 0){
                 $datos_rsrv = $conec->dbFetchObjet($query_rsrv);
                 $_SESSION['modl_show'] = TRUE;
@@ -94,9 +98,10 @@
                 <div id="myModal" class="modal" tabindex="-1" role="dialog">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
-                            <div class="modal-header bg_dark font_gold no_border_bottom md_hdft">
+                            <div class="modal-header bg_dark no_border_bottom md_hdft">
                                 <div class="col-md-8">
-                                    <h5 class="modal-title font-32">Reservaci&oacute;n</h5>
+                                    <h5 class="modal-title font-32 font_gold">Reservaci&oacute;n</h5>
+                                    <small class="font-12 text-white">Usted tiene una reservaci&oacute;n para el d&iacute;a de hoy.</small>
                                 </div>
                                 <div class="col-md-4 col-sm-12 col-xs-12">
                                     <img class="pull-right" width ="80" src="<?php echo $path."uploads/imagenes/logo/".$_SESSION['pref_logh']; ?>" />
@@ -125,31 +130,25 @@
                                                 </tr>
                                                 <tr>
                                                     <td class="pb-20">
-                                                        <span class="font-20 color_dark"><?php echo $datos_rsrv->user_nomb; ?> <?php echo $datos_rsrv->user_apll; ?>.</span>
+                                                        <small>Reservaci&oacute;n a nombre de:</small><br />
+                                                        <?php
+                                                        if (!isset($datos_rsrv->user_nom2)){
+                                                            $datos_rsrv->user_nom2 = "";
+                                                        }
+                                                        if (!isset($datos_rsrv->user_apl2)){
+                                                            $datos_rsrv->user_apl2 = "";
+                                                        }
+                                                        ?>
+                                                        <span class="font-20 color_dark"> <?php echo $datos_rsrv->user_nomb." "; ?><?php echo $datos_rsrv->user_nom2." "; ?><?php echo $datos_rsrv->user_apll." "; ?><?php echo $datos_rsrv->user_apl2." "; ?>.</span>
+                                                        <br /><small><i class="fa fa-id-card-o"></i> CI <?php echo $datos_rsrv->user_ndni; ?> / <i class="fa fa-phone"></i> <?php echo $datos_rsrv->user_tlef; ?></small>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <p class="font_color_dark font-16"> Mesa: N&ordm; <?php echo $datos_rsrv->mesa_nmro; ?>.</p>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <p class="font_color_dark font-16">Tipo: <?php echo $datos_rsrv->mstp_nomb; ?>.</p>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <p class="font_color_dark font-16">Clase: <?php echo $datos_rsrv->msvp_nomb; ?>.</p>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <p class="font_color_dark font-16"> Acompa&ntilde;antes: <?php echo $acomp; ?>.</p>
+                                                        <p class="font_color_dark font-16"> Mesa: N&ordm; <?php echo $datos_rsrv->mesa_nmro; ?> / Tipo: <?php echo $datos_rsrv->mstp_nomb; ?> <br /> Clase: <?php echo $datos_rsrv->msvp_nomb; ?> / Acompa&ntilde;antes: <?php echo $acomp; ?>.</p>
                                                     </td>
                                                 </tr>
                                             </table>
-
                                         </div>
                                     </div>
                                 </div>
@@ -218,30 +217,30 @@
         }
         ?>
         
-        
-
+        <?php
+        // Baner en el inicio
+        $sql_bnrs = "SELECT * FROM tbla_sldr WHERE sldr_estd = 1";
+        $query_sldr = $conec->dbQuery($sql_bnrs, $debug);
+        $ibnrs = 0;
+        while ($datos_bnrs = $conec->dbFetchObjet($query_sldr)){
+            $bnrs[] = $datos_bnrs->sldr_imgn;       
+        }
+        ?>
 
         <div id="banner">
             <div id="home-slider" class="owl-carousel">
-              <div class="item"> <img src="images/banner-img-1.jpg" alt="banner">
+                <div class="item"> <img src="<?php echo $path."uploads/imagenes/slider/".$bnrs[0] ?>" alt="banner">
                 <div class="caption">
-                  <div class="holder"> <strong class="title">Orignal taste • since 1982</strong> <span>Premiucccxcvm Quality</span>
-                    <h1>Treats, Fun Memories<b>&amp;</b>Love</h1>
-                    <strong class="title-2">For Friends Saya</strong> </div>
+                    <div class="holder"> <strong class="title">Majestic Members evoluciona para ti</strong> <span class="font-58"><strong>Innovamos en San Crist&oacute;bal</strong></span>
+                    <h1>La Rumba en <b>&nbsp</b>Otro Nivel</h1>
+                    <strong class="title-2">Exclusivo para 100 Miembros</strong> </div>
                 </div>
-              </div>
-              <div class="item"> <img src="images/banner-img-3.jpg" alt="banner">
+            </div>
+            <div class="item"> <img src="<?php echo $path."uploads/imagenes/slider/".$bnrs[1] ?>" alt="banner">
                 <div class="caption">
-                  <div class="holder"> <strong class="title">Orignal taste • since 1982</strong> <span>Premiucccxcvm Quality</span>
-                    <h1>Treats, Fun Memories<b>&amp;</b>Love</h1>
-                    <strong class="title-2">For Friends Saya</strong> </div>
-                </div>
-              </div>
-              <div class="item"> <img src="images/banner-img-2.jpg" alt="banner">
-                <div class="caption">
-                  <div class="holder"> <strong class="title">Orignal taste • since 1982</strong> <span>Premiucccxcvm Quality</span>
-                    <h1>Treats, Fun Memories<b>&amp;</b>Love</h1>
-                    <strong class="title-2">For Friends Saya</strong> </div>
+                    <div class="holder"> <strong class="title">Traemos nuevas Sorpresas para ti</strong> <span>Rumbas Tem&aacute;ticas, Rumbas Picantes</span>
+                    <h1>Lo Mejor de Todo<b>&nbsp</b>Ser&aacute;n Privadas</h1>
+                    <strong class="title-2">Disfruta con tus Amigos</strong> </div>
                 </div>
               </div>
             </div>
@@ -293,9 +292,10 @@
         <section class="about-section no-bg">
             <div class="container pt-80">
                 <div class="holder pb-0"> 
-                    <strong class="title">En esclusiva para ti</strong>
+                    <strong class="title">En exclusiva para ti</strong>
                     <h2>Nuestros Proximos Eventos</h2>
-                    <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. </p>
+
+                    <p>Acomp&aacute;&ntilde;anos en nuestros pr&oacute;ximos eventos. Las mejores rumbas de la ciudad se viven en Majestic Members &iexcl; No te los puedes perder!</p>
                 </div>
                 <div class="bartenders-section">
                     <div class="row">
@@ -342,7 +342,7 @@
 <!------------------------------------------------------------------------------------------------------------------------------------------------------------>    
 
         <!--Event Section-->
-        <section class="event-section">
+<!--        <section class="event-section">
           <div class="container">
             <div class="holder"> <strong class="title">Jz Event</strong>
               <h2>Ucoming Events</h2>
@@ -352,9 +352,9 @@
             </div>
           </div>
         </section>
-        <!--Event Section--> 
+        Event Section 
 
-        <!--HOME GALLERY-->
+        HOME GALLERY
         <section class="home-gallery gallery">
           <div class="img-frame"> <img src="images/gallery-home-img-1.jpg" alt="">
             <div class="caption">
@@ -381,30 +381,13 @@
               <div class="holder"> <a href="images/gallery-home-img-5.jpg" class="link" data-rel="prettyPhoto"><i class="fa fa-search" aria-hidden="true"></i></a> <a href="gallery-masonry.html" class="link"><i class="fa fa-link" aria-hidden="true"></i></a> </div>
             </div>
           </div>
-        </section>
+        </section>-->
         <!--HOME GALLERY--> 
 
-        <!--NEWSLETTER SECTION-->
-        <section class="newsletter">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-6"> <strong class="title">Get Updates </strong>
-                <h2>Stay In Touch With Updates</h2>
-              </div>
-              <div class="col-md-6">
-                <form action="index.html#">
-                  <input type="text" required>
-                  <input type="submit" value="Subscribe">
-                </form>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!--NEWSLETTER SECTION--> 
       </div>
 
-        <?php
-    }
+    <?php
+    } // Cierre de validacion de la sesion
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 
     //Pie de pagina
@@ -415,10 +398,10 @@
     WrapperEnd();
     ScriptsJS($path, $sjs);
     ?>
-      <script>
-          $('#myModal').modal('show');
-          </script>
-          <?php
+    <script>
+        $('#myModal').modal('show');
+    </script>
+    <?php
     BodyEnd();
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 ?>

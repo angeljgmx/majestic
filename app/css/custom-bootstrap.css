@@ -963,29 +963,29 @@
  * 4.2 -> Basic Padding
  * -----------------------------------------------
 */
-.p-sm-0 {padding: 0!important;}
-.p-sm-5 {padding: 5px !important}
-.p-sm-10 {padding: 10px !important}
-.p-sm-15 {padding: 15px !important}
-.p-sm-20 {padding: 20px !important}
-.p-sm-30 {padding: 30px !important}
-.p-sm-40 {padding: 40px !important}
-.p-sm-50 {padding: 50px !important}
-.p-sm-60 {padding: 60px !important}
-.p-sm-70 {padding: 70px !important}
-.p-sm-80 {padding: 80px !important}
-.p-sm-90 {padding: 90px !important}
-.p-sm-100 {padding: 100px !important}
-.p-sm-110 {padding: 110px !important}
-.p-sm-120 {padding: 120px !important}
-.p-sm-130 {padding: 130px !important}
-.p-sm-140 {padding: 140px !important}
-.p-sm-150 {padding: 150px !important}
-.p-sm-160 {padding: 160px !important}
-.p-sm-170 {padding: 170px !important}
-.p-sm-180 {padding: 180px !important}
-.p-sm-190 {padding: 190px !important}
-.p-sm-200 {padding: 200px !important}
+.p-0 {padding: 0!important;}
+.p-5 {padding: 5px !important}
+.p-10 {padding: 10px !important}
+.p-15 {padding: 15px !important}
+.p-20 {padding: 20px !important}
+.p-30 {padding: 30px !important}
+.p-40 {padding: 40px !important}
+.p-50 {padding: 50px !important}
+.p-60 {padding: 60px !important}
+.p-70 {padding: 70px !important}
+.p-80 {padding: 80px !important}
+.p-90 {padding: 90px !important}
+.p-100 {padding: 100px !important}
+.p-110 {padding: 110px !important}
+.p-120 {padding: 120px !important}
+.p-130 {padding: 130px !important}
+.p-140 {padding: 140px !important}
+.p-150 {padding: 150px !important}
+.p-160 {padding: 160px !important}
+.p-170 {padding: 170px !important}
+.p-180 {padding: 180px !important}
+.p-190 {padding: 190px !important}
+.p-200 {padding: 200px !important}
 
 /*
  * 4.3 -> Margin top
@@ -1838,6 +1838,27 @@
 .height-180 {height: 180px !important;}
 .height-190 {height: 190px !important;}
 .height-200 {height: 200px !important;}
+
+.min-height-10 {min-height: 10px !important;}
+.min-height-20 {min-height: 20px !important;}
+.min-height-30 {min-height: 30px !important;}
+.min-height-40 {min-height: 40px !important;}
+.min-height-50 {min-height: 50px !important;}
+.min-height-60 {min-height: 60px !important;}
+.min-height-70 {min-height: 70px !important;}
+.min-height-80 {min-height: 80px !important;}
+.min-height-90 {min-height: 90px !important;}
+.min-height-100 {min-height: 100px !important;}
+.min-height-110 {min-height: 110px !important;}
+.min-height-120 {min-height: 120px !important;}
+.min-height-130 {min-height: 130px !important;}
+.min-height-140 {min-height: 140px !important;}
+.min-height-150 {min-height: 150px !important;}
+.min-height-160 {min-height: 160px !important;}
+.min-height-170 {min-height: 170px !important;}
+.min-height-180 {min-height: 180px !important;}
+.min-height-190 {min-height: 190px !important;}
+.min-height-200 {min-height: 200px !important;}
 
 .h-25 {height: 25% !important;}
 .h-50 {height: 50% !important;}

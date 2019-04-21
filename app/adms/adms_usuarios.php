@@ -56,7 +56,7 @@
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------// 
 
     // Validacion de la session
-    if (SessionValidate($path, "adms")){
+    if (SessionValidate($path, "adms")){ 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------// 
 
         // Recepcion  de variable de opcion por GET
@@ -68,21 +68,7 @@
         $config['datatable_actions_path'] = $path."app/";
         $title = "Gesti&oacute;n de Datos";
         // Datos del formulario
-        $form =  array(
-            array ('campo' => 'user_nomb', 'nombre' => 'Nombre', 'tipo_objeto' => 'input_text', 'tipo_dato' => 'cleartext'), 
-            array ('campo' => 'user_apll', 'nombre' => 'Apellido', 'tipo_objeto' => 'input_text', 'tipo_dato' => 'cleartext'), 
-            array ('campo' => 'user_ndni', 'nombre' => 'C&eacute;dula', 'tipo_objeto' => 'input_text', 'tipo_dato' => 'cleartext'), 
-            array ('campo' => 'user_sexo', 'nombre' => 'Sexo', 'tipo_objeto' => 'input_radio', 'tipo_dato' => 'cleartext', 'input_radio_bool' => FALSE, 'opcion0' => 'Femenino', 'value0' => 'F', 'opcion1' => 'Masculino', 'value1' => 'M'), 
-            array ('campo' => 'user_dirc', 'nombre' => 'Direcci&oacute;n', 'tipo_objeto' => 'textarea', 'tipo_dato' => 'cleartext'),  
-            array ('campo' => 'user_fnac', 'nombre' => 'Fecha de Nacimiento', 'tipo_objeto' => 'input_date_picker', 'tipo_dato' => 'date'), 
-            array ('campo' => 'user_tlef', 'nombre' => 'Tel&eacute;fono', 'tipo_objeto' => 'input_tel', 'tipo_dato' => 'cleartext'), 
-            array ('campo' => 'user_movl', 'nombre' => 'Tel&eacute;fono celular', 'tipo_objeto' => 'input_tel', 'tipo_dato' => 'cleartext'), 
-            array ('campo' => 'user_mail', 'nombre' => 'Email', 'tipo_objeto' => 'input_email', 'tipo_dato' => 'cleartext'),
-            array ('campo' => 'user_pass', 'nombre' => 'Contrase&ntilde;a', 'tipo_objeto' => 'input_password', 'tipo_dato' => 'php-password'), 
-            array ('campo' => 'user_scdg', 'tipo_objeto' => 'input_hidden', 'tipo_dato' => 'normal', 'value' => sha1(uniqid())),
-            array ('campo' => 'user_estd', 'nombre' => 'Estado', 'tipo_objeto' => 'input_radio', 'tipo_dato' => 'bool', 'opcion0' => 'Inactivo', 'opcion1' => 'Activo'), 
-        );
-
+        
         // Switch para las opciones e lista, nuevo registro, eliminar, modificar, ver detalles
         switch ($op) {
 //========================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================// 
@@ -112,6 +98,25 @@
 
             // Opcion de insertar registros
             case "insertar":
+                
+                $form =  array(
+                    array ('campo' => 'user_nomb', 'nombre' => 'Primer nombre', 'tipo_objeto' => 'input_text', 'tipo_dato' => 'cleartext'), 
+                    array ('campo' => 'user_nom2', 'nombre' => 'Segundo nombre', 'tipo_objeto' => 'input_text', 'tipo_dato' => 'cleartext'), 
+                    array ('campo' => 'user_apll', 'nombre' => 'Primer apellido', 'tipo_objeto' => 'input_text', 'tipo_dato' => 'cleartext'), 
+                    array ('campo' => 'user_apl2', 'nombre' => 'Segundo apellido', 'tipo_objeto' => 'input_text', 'tipo_dato' => 'cleartext'), 
+                    array ('campo' => 'user_ndni', 'nombre' => 'C&eacute;dula', 'tipo_objeto' => 'input_text', 'tipo_dato' => 'cleartext'), 
+                    array ('campo' => 'user_sexo', 'nombre' => 'Sexo', 'tipo_objeto' => 'input_radio', 'tipo_dato' => 'cleartext', 'input_radio_bool' => FALSE, 'opcion0' => 'Femenino', 'value0' => 'F', 'opcion1' => 'Masculino', 'value1' => 'M'), 
+                    array ('campo' => 'user_dirc', 'nombre' => 'Direcci&oacute;n', 'tipo_objeto' => 'textarea', 'tipo_dato' => 'cleartext'),  
+                    array ('campo' => 'user_fnac', 'nombre' => 'Fecha de Nacimiento', 'tipo_objeto' => 'input_date_picker', 'tipo_dato' => 'date'), 
+                    array ('campo' => 'user_tlef', 'nombre' => 'Tel&eacute;fono', 'tipo_objeto' => 'input_tel', 'tipo_dato' => 'cleartext'), 
+                    array ('campo' => 'user_movl', 'nombre' => 'Tel&eacute;fono celular', 'tipo_objeto' => 'input_tel', 'tipo_dato' => 'cleartext'), 
+                    array ('campo' => 'user_mail', 'nombre' => 'Email', 'tipo_objeto' => 'input_email', 'tipo_dato' => 'cleartext'),
+                    array ('campo' => 'user_pass', 'nombre' => 'Contrase&ntilde;a', 'tipo_objeto' => 'input_password', 'tipo_dato' => 'php-password'), 
+                    array ('campo' => 'user_scdg', 'tipo_objeto' => 'input_hidden', 'tipo_dato' => 'normal', 'value' => sha1(uniqid())),
+                    array ('campo' => 'user_estd', 'nombre' => 'Estado', 'tipo_objeto' => 'input_radio', 'tipo_dato' => 'bool', 'opcion0' => 'Inactivo', 'opcion1' => 'Activo'), 
+                );
+                
+                
                 if ($permisos['insr'] == TRUE){
                     if (isset($_POST["control"]) && ($_POST["control"] == 1)){
                         $criterio = "";
@@ -123,7 +128,7 @@
                             $query_id = $conec->dbQuery($sql_ultimo_id, $debug);
                             $ultimo_id = $conec->dbFetchArray($query_id);
                             $user_id = $ultimo_id[0];
-                            
+                                                 
                             $sql_url = "SELECT pref_durl FROM tbla_pref WHERE id = 1";
                             $query_url = $conec->dbQuery($sql_url, $debug);
                             $datos_pref = $conec->dbFetchObjet($query_url);
@@ -145,6 +150,24 @@
 
             // Opcion de editar registros
             case "editar":
+                
+                $form =  array(
+                    array ('campo' => 'user_nomb', 'nombre' => 'Primer nombre', 'tipo_objeto' => 'input_text', 'tipo_dato' => 'cleartext'), 
+                    array ('campo' => 'user_nom2', 'nombre' => 'Segundo nombre', 'tipo_objeto' => 'input_text', 'tipo_dato' => 'cleartext'), 
+                    array ('campo' => 'user_apll', 'nombre' => 'Primer apellido', 'tipo_objeto' => 'input_text', 'tipo_dato' => 'cleartext'), 
+                    array ('campo' => 'user_apl2', 'nombre' => 'Segundo apellido', 'tipo_objeto' => 'input_text', 'tipo_dato' => 'cleartext'), 
+                    array ('campo' => 'user_ndni', 'nombre' => 'C&eacute;dula', 'tipo_objeto' => 'input_text', 'tipo_dato' => 'cleartext'), 
+                    array ('campo' => 'user_sexo', 'nombre' => 'Sexo', 'tipo_objeto' => 'input_radio', 'tipo_dato' => 'cleartext', 'input_radio_bool' => FALSE, 'opcion0' => 'Femenino', 'value0' => 'F', 'opcion1' => 'Masculino', 'value1' => 'M'), 
+                    array ('campo' => 'user_dirc', 'nombre' => 'Direcci&oacute;n', 'tipo_objeto' => 'textarea', 'tipo_dato' => 'cleartext'),  
+                    array ('campo' => 'user_fnac', 'nombre' => 'Fecha de Nacimiento', 'tipo_objeto' => 'input_date_picker', 'tipo_dato' => 'date'), 
+                    array ('campo' => 'user_tlef', 'nombre' => 'Tel&eacute;fono', 'tipo_objeto' => 'input_tel', 'tipo_dato' => 'cleartext'), 
+                    array ('campo' => 'user_movl', 'nombre' => 'Tel&eacute;fono celular', 'tipo_objeto' => 'input_tel', 'tipo_dato' => 'cleartext'), 
+                    array ('campo' => 'user_mail', 'nombre' => 'Email', 'tipo_objeto' => 'input_email', 'tipo_dato' => 'cleartext'),
+                    //array ('campo' => 'user_pass', 'nombre' => 'Contrase&ntilde;a', 'tipo_objeto' => 'input_password', 'tipo_dato' => 'php-password'), 
+                    //array ('campo' => 'user_scdg', 'tipo_objeto' => 'input_hidden', 'tipo_dato' => 'normal', 'value' => sha1(uniqid())),
+                    array ('campo' => 'user_estd', 'nombre' => 'Estado', 'tipo_objeto' => 'input_radio', 'tipo_dato' => 'bool', 'opcion0' => 'Inactivo', 'opcion1' => 'Activo'), 
+                );
+                
                 if ($permisos['edit'] == TRUE){
                     if (isset($_POST["control"]) && ($_POST["control"] == 1)){
                         $criterio = "";

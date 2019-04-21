@@ -61,9 +61,9 @@
         $title = "Gesti&oacute;n de Datos";
         // Datos del formulario
         $form =  array(
-            array ('campo' => 'plts_lcct', 'nombre' => 'Categor&iacute;a del licor', 'tipo_objeto' => 'select', 'tipo_dato' => 'integer', 'tabla' => 'tbla_plct', 'orden' => 'id', 'valor' => 'id', 'descripcion' => 'plct_nomb'), 
+            array ('campo' => 'plts_pltp', 'nombre' => 'Tipo de plato', 'tipo_objeto' => 'select', 'tipo_dato' => 'integer', 'tabla' => 'tbla_pltp', 'orden' => 'id', 'valor' => 'id', 'descripcion' => 'pltp_nomb'), 
             array ('campo' => 'plts_nomb', 'nombre' => 'Nombre', 'tipo_objeto' => 'input_text', 'tipo_dato' => 'cleartext'),
-            array ('campo' => 'plts_desc', 'nombre' => 'Descripci&oacute;n', 'tipo_objeto' => 'textarea', 'tipo_dato' => 'cleartext'), 
+            array ('campo' => 'plts_desc', 'nombre' => 'Descripci&oacute;n', 'tipo_objeto' => 'ckeditor', 'tipo_dato' => 'html'), 
             array ('campo' => 'plts_imgn', 'nombre' => 'Im&aacute;gen', 'tipo_objeto' => 'file', 'tipo_dato' => 'file', 'type' => 1, 'folder' => 'imagenes/platos'),  
             array ('campo' => 'plts_prec', 'nombre' => 'Precio', 'tipo_objeto' => 'input_number', 'tipo_dato' => 'float'), 
             array ('campo' => 'plts_estd', 'nombre' => 'Estado', 'tipo_objeto' => 'input_radio', 'tipo_dato' => 'bool', 'opcion0' => 'Inactivo', 'opcion1' => 'Activo'), 
@@ -77,16 +77,16 @@
             case "listar":
                 if ($permisos['cons'] == TRUE){
                     $id_tabla = FALSE;
-                    $sql = "SELECT tbla_plts.id, plts_lctp, plts_nomb, plts_lcct, plts_lcmc, plts_imgn, plts_estd, plts_freg, "
-                        ."tbla_plct.id AS plct_id, plct_nomb "
+                    $sql = "SELECT tbla_plts.id,  plts_nomb, plts_pltp, plts_imgn, plts_desc, plts_prec, plts_estd, plts_freg, "
+                        ."tbla_pltp.id AS pltp_id, pltp_nomb "
                         ."FROM tbla_plts "
-                        ."INNER JOIN tbla_plct ON (plts_plct = tbla_plct.id) "
+                        ."INNER JOIN tbla_pltp ON (plts_pltp = tbla_pltp.id) "
                         ."ORDER BY plts_freg DESC";
                     $legend = $page_title;
                     $dt_acciones = array('editar' => '', 'eliminar' => '', 'auditoria' => '');
                     $datatable = array(
                         array('nombre' => 'Nombre', 'width' => '', 'campo' => 'plts_nomb', 'formato' => 'normal'), 
-                        array('nombre' => 'Categor&iacute;a', 'width' => '', 'campo' => 'plts_plct', 'formato' => 'normal'), 
+                        array('nombre' => 'Categor&iacute;a', 'width' => '', 'campo' => 'pltp_nomb', 'formato' => 'normal'), 
                         array('nombre' => 'Im&aacute;gen', 'width' => '', 'campo' => 'plts_imgn', 'formato' => 'imagen', 'folder' => 'imagenes/licores/'), 
                         array('nombre' => 'Estado', 'width' => '', 'campo' => 'plts_estd', 'formato' => 'radio', 'opcion0' => 'Inactivo', 'opcion1' => 'Activo'), 
                         array('nombre' => 'Fecha de ingreso', 'width' => '', 'campo' => 'plts_freg', 'formato' => 'datetime'), 

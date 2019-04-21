@@ -1,3 +1,3 @@
 <?php
-header('Location: /construction/index.html');
+header('Location: app/index.php');
 ?>

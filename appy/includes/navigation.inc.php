@@ -22,6 +22,7 @@
         $_SESSION['nav_sobre_nosotros'] = ($current == "empresa") ? ' class="active"' : "";
         $_SESSION['nav_noticias'] = ($current == "noticias") ? ' class="active"' : "";
         $_SESSION['nav_eventos'] = ($current == "eventos") ? ' class="active"' : "";
+        $_SESSION['nav_platos'] = ($current == "platos") ? ' class="active"' : "";
         $_SESSION['nav_contacto'] = ($current == "contacto") ? ' class="active"' : "";
                 
         // Control de errores

@@ -64,6 +64,7 @@
             array ('campo' => 'lcor_lctp', 'nombre' => 'Tipo de licor', 'tipo_objeto' => 'select', 'tipo_dato' => 'integer', 'tabla' => 'tbla_lctp', 'orden' => 'id', 'valor' => 'id', 'descripcion' => 'lctp_nomb'), 
             array ('campo' => 'lcor_lcmc', 'nombre' => 'Marca del licor', 'tipo_objeto' => 'select', 'tipo_dato' => 'integer', 'tabla' => 'tbla_lcmc', 'orden' => 'id', 'valor' => 'id', 'descripcion' => 'lcmc_nomb'), 
             array ('campo' => 'lcor_lcct', 'nombre' => 'Categor&iacute;a del licor', 'tipo_objeto' => 'select', 'tipo_dato' => 'integer', 'tabla' => 'tbla_lcct', 'orden' => 'id', 'valor' => 'id', 'descripcion' => 'lcct_nomb'), 
+            array ('campo' => 'lcor_lcct', 'nombre' => 'Categor&iacute;a del licor', 'tipo_objeto' => 'select', 'tipo_dato' => 'integer', 'tabla' => 'tbla_lcct', 'orden' => 'id', 'valor' => 'id', 'descripcion' => 'lcct_nomb'), 
             array ('campo' => 'lcor_nomb', 'nombre' => 'Nombre', 'tipo_objeto' => 'input_text', 'tipo_dato' => 'cleartext'),
             array ('campo' => 'lcor_desc', 'nombre' => 'Descripci&oacute;n', 'tipo_objeto' => 'ckeditor', 'tipo_dato' => 'html'), 
             array ('campo' => 'lcor_imgn', 'nombre' => 'Im&aacute;gen', 'tipo_objeto' => 'file', 'tipo_dato' => 'file', 'type' => 1, 'folder' => 'imagenes/licores'),  

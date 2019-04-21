@@ -57,6 +57,12 @@ and open the template in the editor.
     color: #222;
 }
 
+.nota {
+    font: 300 12px/12px 'Open Sans', sans-serif;
+    color: #222;
+    text-align: justify !important;
+}
+
 .no_border_bottom {
     border-bottom: none !important;
 }
@@ -175,7 +181,7 @@ and open the template in the editor.
     text-transform: uppercase;
     text-decoration: none;
     background: #1f1f1f;
-    margin: 0 0 0 30px;
+    margin: 0 0 0 0;
     border: none;
 }
 
@@ -249,10 +255,13 @@ and open the template in the editor.
 
 .plano_majestic {
     width: 100%;
-    background-image: url("../../uploads/imagenes/plano/planta_majestic.jpg");
+/*    background-image: url("../../uploads/imagenes/plano/planta_majestic.jpg");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover;*/
+    border-style: solid;
+    border-width: 2px;
+    border-color: #c5a059;
 }
 .plano_majestic td {
 /*    width: 48px;
@@ -331,4 +340,157 @@ and open the template in the editor.
 }
 .parallax-section-movil address {
 	margin: 0 15px;
+}
+
+#header a{
+    color: #c5a059 !important;
+}
+
+.modal-header {
+    border-bottom: none !important;
+}
+
+.modal-footer {
+    border-top: none !important;
+}
+
+.precio {
+    color: #ffffff;
+}
+
+.precio:hover {
+    color: #222 !important;
+}
+
+.select_tasa {
+    background-color: #000000;
+    border-color: #c5a059;
+}
+
+.contact-info-contenedor {
+    height: 600px !important;
+}
+
+.contact-info {
+    height: 100% !important;
+}
+
+/* plano majestic */
+#td-2-2 {
+    border-top: #c5a059 thin solid;
+    border-left: #c5a059 thin solid;
+}
+#td-2-3 {
+    border-top: #c5a059 thin solid;
+}
+#td-2-4 {
+    border-top: #c5a059 thin solid;
+}
+#td-2-5 {
+    border-top: #c5a059 thin solid;
+    border-right: #c5a059 thin solid;
+}
+#td-3-6 {
+    border-top: #c5a059 thin solid;
+    border-right: #c5a059 thin solid;
+}
+#td-4-6 {
+    border-right: #c5a059 thin solid;
+}
+#td-5-7 {
+    border-top: #c5a059 thin solid;
+    border-right: #c5a059 thin solid;
+}
+#td-6-8 {
+    border-top: #c5a059 thin solid;
+    border-right: #c5a059 thin solid;
+}
+#td-7-9 {
+    border-top: #c5a059 thin solid;
+    border-right: #c5a059 thin solid;
+}
+#td-8-10 {
+    border-top: #c5a059 thin solid;
+    border-right: #c5a059 thin solid;
+}
+#td-9-11 {
+    border-top: #c5a059 thin solid;
+    border-right: #c5a059 thin solid;
+}
+#td-10-11 {
+    border-right: #c5a059 thin solid;
+}
+#td-11-11 {
+    border-right: #c5a059 thin solid;
+    border-bottom: #c5a059 thin solid;
+}
+#td-11-10 {
+    border-bottom: #c5a059 thin solid;
+}
+#td-11-9 {
+    border-bottom: #c5a059 thin solid;
+}
+#td-11-8 {
+    border-bottom: #c5a059 thin solid;
+}
+#td-11-7 {
+    border-bottom: #c5a059 thin solid;
+}
+#td-11-6 {
+    border-bottom: #c5a059 thin solid;
+}
+#td-11-7 {
+    border-bottom: #c5a059 thin solid;
+}
+#td-11-6 {
+    border-bottom: #c5a059 thin solid;
+}
+#td-11-5 {
+    border-bottom: #c5a059 thin solid;
+}
+#td-11-4 {
+    border-bottom: #c5a059 thin solid;
+}
+#td-11-3 {
+    border-bottom: #c5a059 thin solid;
+    border-left: #c5a059 thin solid;
+}
+#td-3-2 {
+    border-left: #c5a059 thin solid;
+}
+#td-4-2 {
+    border-left: #c5a059 thin solid;
+    border-bottom: #c5a059 thin solid;
+}
+#td-4-3 {
+    border-bottom: #c5a059 thin solid;
+}
+#td-4-4 {
+    border-bottom: #c5a059 thin solid;
+}
+#td-5-2 {
+    border-left: #c5a059 thin solid;
+}
+#td-6-2 {
+    border-left: #c5a059 thin solid;
+}
+#td-7-2 {
+    border-left: #c5a059 thin solid;
+}
+#td-8-2 {
+    border-left: #c5a059 thin solid;
+    border-bottom: #c5a059 thin solid;
+}
+#td-9-3 {
+    border-top: #c5a059 thin solid;
+    border-left: #c5a059 thin solid;
+    border-right: #c5a059 thin solid;
+}
+#td-10-3 {
+    border-left: #c5a059 thin solid;
+    border-right: #c5a059 thin solid;
+    border-bottom: #c5a059 thin solid;
+}
+#td-9-6 {
+    border: #c5a059 thin solid;
 }

@@ -53,15 +53,15 @@
         // Recepcion  de variable de opcion por GET
         $op = OptionGetPost($path);
 
-        $table = "tbla_pltc";
+        $table = "tbla_pltp";
         $captcha ="off";
         $config['datatable_title'] = "Platos - Tipos";
         $config['datatable_actions_path'] = $path."app/";
         $title = "Gesti&oacute;n de Datos";
         // Datos del formulario
         $form =  array(
-            array ('campo' => 'pltc_nomb', 'nombre' => 'Nombre', 'tipo_objeto' => 'input_text', 'tipo_dato' => 'cleartext'),
-            array ('campo' => 'pltc_estd', 'nombre' => 'Estado del registro', 'tipo_objeto' => 'input_radio', 'tipo_dato' => 'bool', 'opcion0' => 'Inactivo', 'opcion1' => 'Activo'), 
+            array ('campo' => 'pltp_nomb', 'nombre' => 'Nombre', 'tipo_objeto' => 'input_text', 'tipo_dato' => 'cleartext'),
+            array ('campo' => 'pltp_estd', 'nombre' => 'Estado del registro', 'tipo_objeto' => 'input_radio', 'tipo_dato' => 'bool', 'opcion0' => 'Inactivo', 'opcion1' => 'Activo'), 
         );
 
         // Switch para las opciones e lista, nuevo registro, eliminar, modificar, ver detalles
@@ -72,13 +72,13 @@
             case "listar":
                 if ($permisos['cons'] == TRUE){
                     $id_tabla = FALSE;
-                    $sql = "SELECT * FROM tbla_pltc ORDER BY id ASC";
+                    $sql = "SELECT * FROM tbla_pltp ORDER BY id ASC";
                     $legend = $page_title;
                     $dt_acciones = array('editar' => '', 'eliminar' => '', 'auditoria' => '');
                     $datatable = array(
-                        array('nombre' => 'Categor&iacute;a del plato', 'width' => '', 'campo' => 'pltc_tipo', 'formato' => 'normal'), 
-                        array('nombre' => 'Estado del registro', 'width' => '', 'campo' => 'pltc_estd', 'formato' => 'radio', 'opcion0' => 'Inactivo', 'opcion1' => 'Activo'), 
-                        array('nombre' => 'Fecha de ingreso del registro', 'width' => '', 'campo' => 'pltc_freg', 'formato' => 'datetime'), 
+                        array('nombre' => 'Nombre del tipo de plato', 'width' => '', 'campo' => 'pltp_nomb', 'formato' => 'normal'), 
+                        array('nombre' => 'Estado del registro', 'width' => '', 'campo' => 'pltp_estd', 'formato' => 'radio', 'opcion0' => 'Inactivo', 'opcion1' => 'Activo'), 
+                        array('nombre' => 'Fecha de ingreso del registro', 'width' => '', 'campo' => 'pltp_freg', 'formato' => 'datetime'), 
                     );
                     DataTable($path, $sql, $objetivo, $dt_acciones,  $datatable, $config);
                 }

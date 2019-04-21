@@ -1,11 +1,14 @@
 <?php
 
-    /* Kamila */
+    /* Majestic Members */
 
 //=============================================================================================================================================================================================//
 
     // Definicion de la cabecera HTML de las paginas
     function HeaderHTML($path, $page_title, $meta, $css, $js, $config){
+        
+        // Default Timezone
+        date_default_timezone_set('America/Caracas');
         
          // Librerias requeridas
         require_once $path.'core/db.class.core.php';
@@ -53,6 +56,9 @@
                 <meta name="description" content="<?php echo $description; ?>" />
                 <meta name="keywords" content="<?php echo $keywords; ?>" />
                 <meta name="author" content="<?php echo $author; ?>" />
+                <meta http-equiv="expires" content="0">
+                <meta http-equiv="Cache-Control" content="no-cache"> 
+                <meta http-equiv="Pragma" CONTENT="no-cache">
                 <?php echo $meta; ?>
                 
                 <!-- Favicon and Touch Icons -->
@@ -73,14 +79,13 @@
                 <!---Owl Carousel CSS-->
                 <link href="<?php echo $path."app/"; ?>css/owl.carousel.css" rel="stylesheet">
                 <!--FONTAWESOME CSS-->
-                <link href="<?php echo $path."app/"; ?>css/font-awesome.min.css" rel="stylesheet" type="text/css">
+                <link href="<?php echo $path."app/"; ?>fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
                 <!---PrettyPhoto CSS-->
                 <link href="<?php echo $path."app/"; ?>css/prettyPhoto.css" rel="stylesheet">
              
                 <link href="<?php echo $path."app/"; ?>fonts/flaticons/flaticon.css" rel="stylesheet" >
                 
-                <!-- Estilos adicionales -->
-<!--                <link rel="stylesheet" type="text/css" href="<?php echo $path."app/"; ?>plugins/tooltipster-master/tooltipster/dist/css/tooltipster.bundle.min.css" />-->
+                <!-- Estilos adicionales -->                
                 <link rel="stylesheet" type="text/css" href="<?php echo $path."app/"; ?>css/custom-bootstrap.css">
                 <link rel="stylesheet" type="text/css" href="<?php echo $path."app/"; ?>css/custom.css">
                 <?php 
@@ -115,6 +120,14 @@
         
         // Pagina Actual
         $_SESSION['pgna_actl'] = basename($_SERVER['PHP_SELF']);
+        
+        // Tasa de Cambio
+        if (!isset($_SESSION['tasa_codg'])){
+            $_SESSION['tasa_cdgo'] = "VE";
+        }
+        if (isset($_GET['tasa'])){
+            echo $_SESSION['tasa_cdgo'] = $_REQUEST['tasa'];
+        }
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 
 //        // Aviso inicio de session           
@@ -175,67 +188,75 @@
 
     function WrapperBegin(){
         ?>
-            <div id="wrapper"> 
+        <div id="wrapper"> 
         <?php
     }
 //=============================================================================================================================================================================================//
     
     function PageHeader($path, $current){
+         
+        // Librerias requeridas
+        require_once $path.'app/includes/core.app.php';
+        CoreApp($path);
+        require_once $path.'includes/config.inc.php';
+
+        // Control de errores
+        $debug = DEBUG; 
+
+        // Crear la instancia y conectar a la BD
+        $conec = new db();
+        $conec->dbConexion(); 
         
         // Inclusion de la funcion de navegacion
         include $path.'app/includes/navigation.inc.php';
-        include $path.'app/includes/sidebar_menu.php';
+        //include $path.'app/includes/sidebar_menu.php';
         $config = [];
         ?>
         
         <header id="header"> 
             <!-- Navigation Row Start -->
             <div class="container">
-                <div class="top-bar"> <strong class="time"><i class="fa fa-clock-o" aria-hidden="true"></i> open at : 6 pm  to  2 am</strong>
-                    <div class="top-social"> <strong class="title"><span class="color_gold"><i class="fa fa-user font-16"></i>&nbsp; <?php echo $_SESSION['user_nmap']; ?></span></strong>
-                        <ul>
-                            <li><a href="<?php echo $_SESSION['fcbk_link'];?>"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                            <li><a href="<?php echo $_SESSION['twet_link'];?>"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                            <li><a href="<?php echo $_SESSION['inst_link'];?>"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="navigation"> 
-                    <strong class="logo"><a href="<?php echo $path."app/inicio.php"; ?>"><img width="200" src="<?php echo $path."uploads/imagenes/logo/".$_SESSION['pref_logh']; ?>" alt="<?php echo $_SESSION['cont_nomb']; ?>"</a></strong>
-                    <?php
-                    Navigation($path, $current, $config);
-                    ?>
-                    <div class="top-right-box">
-                        <div class="burger-nav">
-                            <div class="tl-burger-nav">
-                                <!--<div id="tl_side-menu-btn" class="cp_side-menu"><a href="bartender.html#" class=""><i class="fa fa-align-justify" aria-hidden="true"></i></a></div>-->
+                <div class="row">
+                    <div class="top-bar mb-40">
+                        <strong class="time col-sm-12 col-xs-12 col-md-6 pb-40">
+                            <i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo $_SESSION['cont_hrio']; ?>
+                        </strong>
+                        <div class="top-social col-md-6 col-xs-12 col-sm-12"> 
+                            <ul>
+<!--                                <li>
+                                    <form action="<?php echo $path."app/".$_SESSION['pgna_actl']; ?>">
+                                        <select name="tasa" id="tasa" class="select_tasa color_gold" onchange="this.form.submit()">
+                                            <option>Moneda</option>
+                                            <?php
+                                                $sql_tasa = "SELECT * FROM tbla_tasa WHERE (tasa_estd = 1)";
+                                                $query_tasa = $conec->dbQuery($sql_tasa, $debug);
 
-                                    <?php
-                                    SideBarMenu($path, $current, $config);
-                                    ?>
-
-                            </div>
+                                                while ($datos_tasa = $conec->dbFetchObjet($query_tasa)){
+                                                    ?>
+                                                    <option value="<?php echo $datos_tasa->tasa_cdgo; ?>"><?php echo $datos_tasa->tasa_nomb; ?></option>
+                                                    <?php
+                                                }
+                                                ?>
+                                        </select>
+                                    </form>
+                                </li>-->
+                                <li class="color_gold font-12"><i class="fa fa-user"></i> <?php echo $_SESSION['user_nmap']; ?></li>
+                                <li class="color_gold font-12"><a href="<?php echo $path."app/index.php?session=cerrar";?>"><i class="fa fa-sign-in font-16"></i> <?php echo "Cerrar Sesi&oacute;n"; ?></a></li>
+                            </ul>
+                            <!--<ul>-->
+                                <!--<li><a href="<?php echo $_SESSION['fcbk_link'];?>"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>-->
+                                <!--<li><a href="<?php echo $_SESSION['twet_link'];?>"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>-->
+                                <!--<li><a href="<?php echo $_SESSION['inst_link'];?>"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>-->
+                            <!--</ul>-->
                         </div>
-<!--                        <div class="tl_search_holder">
-                            <button id="trigger-overlay" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
-                        </div>-->
                     </div>
                 </div>
+                <?php
+                    Navigation($path, $current, $config);
+                ?>
             </div>
 
             <!--Navigation Row End--> 
-
-            <!--Search Bar Holder Start-->
-            <div class="overlay overlay-contentscale">
-                <button type="button" class="overlay-close">Close</button>
-                <div class="tl_search_inner">
-                    <form method="get">
-                        <input type="text" placeholder="Enter your search" required>
-                        <button class="submit"><i class="fa fa-search"></i></button>
-                    </form>
-                </div>
-            </div>
-            <!--Search Bar Holder End--> 
         </header>        
 
      <?php       
@@ -267,7 +288,7 @@
 
         ?>
         <!--Inner BANNER-->
-        <div id="inner-banner" class="inner-banner-bg-3">
+        <div id="inner-banner" class="inner-banner-bg-10">
             <div class="container">
                 <h1><?php echo $page_title; ?></h1>
                 <ol class="breadcrumb">
@@ -350,31 +371,31 @@
 
         ?>
         <!-- footer -->
-        <footer id="footer"> <strong class="footer-logo"><a href="index.html"><img src="images/logo.png" alt=""></a></strong>
+        <footer id="footer"> <strong class="footer-logo"><a href="<?php echo $path."app/inicio.php"; ?>"><img width="240" src="<?php echo $path."uploads/imagenes/logo/".$_SESSION['pref_logh']; ?>" alt="<?php echo $_SESSION['cont_nomb']; ?>"></a></strong>
             <div class="container">
                 <div class="row">
                     <div class="col-md-4">
                         <address>
-                            <p><span>Call us</span> +01 315 0006 565</p>
+                            <p><span>Llamanos</span> <?php echo $_SESSION['cont_tlfn']; ?></p>
                         </address>
                     </div>
                     <div class="col-md-4">
                         <address>
-                            <p><span>Address</span> Canal View Socity JzStreet La 0005846</p>
+                            <p><span>Estamos ubicados en</span> <?php echo $_SESSION['cont_dirc']; ?></p>
                         </address>
                     </div>
                     <div class="col-md-4">
                         <address>
-                            <p><span>Email</span> <a href="mailto:">support@jzpub.com</a></p>
+                            <p><span>Email</span> <a href="mailto:<?php echo $_SESSION['cont_dirc']; ?>"><?php echo $_SESSION['cont_mail']; ?></a></p>
                         </address>
                     </div>
                 </div>
-                <strong class="copyrights">Jz Pub &copy; 2016 All Rights Reserved <a href="bartender.html#">Terms of Use</a> and <a href="bartender.html#">Privacy Policy</a></strong>
-                <div class="footer-social">
+    <strong class="copyrights"><?php echo $_SESSION['pref_copy']; ?></strong>
+                <div class="footer-social mb-40">
                     <ul>
-                        <li><a href="bartender.html#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                        <li><a href="bartender.html#"><i class="fa fa-tripadvisor" aria-hidden="true"></i></a></li>
-                        <li><a href="bartender.html#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                        <!--<li><a href="<?php echo $_SESSION['fcbk_link']; ?>" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>-->
+                        <li><a href="<?php echo $_SESSION['inst_link']; ?>" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                        <!--<li><a href="<?php echo $_SESSION['twet_link']; ?>" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>-->
                     </ul>
                 </div>
             </div>
@@ -407,19 +428,12 @@
         <!--COUNTER EVENT--> 
         <script type="text/javascript" src="<?php echo $path."app/"; ?>js/jquery.countdown.min.js"></script> 
         
-<!--        <script type="text/javascript" src="<?php echo $path."app/"; ?>plugins/tooltipster-master/dist/js/tooltipster.bundle.min.js"></script>  -->
-
         <!---Custom Script.js--> 
         <script src="<?php echo $path."app/"; ?>js/custom_script.js"></script>
         <script type="text/javascript">
             $(document).ready(function(){
             $("#basic").modal('show');
             });
-        </script>
-        <script>
-        $(document).ready(function() {
-            $('.tooltip').tooltipster();
-        });
         </script>
         <?php 
         echo $sjs;
@@ -456,4 +470,119 @@
     }
 //=============================================================================================================================================================================================//
 
+    function ModalMensaje($path, $titulo, $mensaje){
+        ?>
+        <div id="myModal" class="modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header bg_dark font_gold no_border_bottom md_hdft">
+                        <div class="col-md-8">
+                            <h5 class="modal-title font-32"><?php echo $titulo; ?></h5>
+                        </div>
+                        <div class="col-md-4 ">
+                            <img class="pull-right" width ="80" src="<?php echo $path."uploads/imagenes/logo/".$_SESSION['pref_logh']; ?>" />
+                        </div>
+                        <button type="button" class="close color_gold" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body bg_gold">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <table>
+                                        <tr>
+                                            <td class="pt-40 pb-40 text-center">
+                                                <span class="font-18 color_dark"><?php echo $mensaje; ?></span>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer bg_dark font_gold no_border_top md_hdft">
+                        <button type="button" class="btn btn-secondary pull-right button_rsrv" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php
+    }
+//=============================================================================================================================================================================================//
+    
+    function ModalReservacion($path, $evento, $user){
+        ?>
+        <div id="myModal" class="modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header bg_dark font_gold no_border_bottom md_hdft">
+                        <div class="col-md-8">
+                            <h5 class="modal-title font-32">Reservaci&oacute;n</h5>
+                        </div>
+                        <div class="col-md-4 col-sm-12 col-xs-12">
+                            <img class="pull-right" width ="80" src="<?php echo $path."uploads/imagenes/logo/".$_SESSION['pref_logh']; ?>" />
+                        </div>
+                        <button type="button" class="close color_gold" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body bg_gold">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <img src="<?php echo $path."uploads/imagenes/eventos/".$datos_rsrv->evnt_imgn; ?>">
+                                </div>
+                                <div class="col-md-8">
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <span class="font-24 color_dark"><?php echo $datos_rsrv->evnt_ttlo; ?></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="pb-20">
+                                                <span class="font-12 color_dark"><?php echo fecha($datos_rsrv->evnt_fech, 'fecha-completa') ?></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="pb-20">
+                                                <span class="font-20 color_dark"><?php echo $datos_rsrv->user_nomb; ?> <?php echo $datos_rsrv->user_apll; ?>.</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p class="font_color_dark font-16"> Mesa: N&ordm; <?php echo $datos_rsrv->mesa_nmro; ?>.</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p class="font_color_dark font-16">Tipo: <?php echo $datos_rsrv->mstp_nomb; ?>.</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p class="font_color_dark font-16">Clase: <?php echo $datos_rsrv->msvp_nomb; ?>.</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p class="font_color_dark font-16"> Acompa&ntilde;antes: <?php echo $acomp; ?>.</p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer bg_dark font_gold no_border_top md_hdft">
+                        <button type="button" class="btn btn-secondary pull-right button_rsrv" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php
+    }
+//=============================================================================================================================================================================================//
+ 
     ?>

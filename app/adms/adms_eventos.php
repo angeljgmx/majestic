@@ -85,7 +85,7 @@
             case "listar":
                 if ($permisos['cons'] == TRUE){
                     $id_tabla = FALSE;
-                    $sql = "SELECT * FROM tbla_evnt ORDER BY evnt_freg DESC";
+                    $sql = "SELECT * FROM tbla_evnt ORDER BY evnt_fech DESC";
                     $legend = $page_title;
                     $dt_acciones = array('editar' => '', 'eliminar' => '');
                     $datatable = array(

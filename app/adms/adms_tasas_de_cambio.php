@@ -37,13 +37,13 @@
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------// 
 
     //Encabezado de la pagina
-    $page_title = "Tasas ";
+    $page_title = "Tasas de Cambio ";
     $page_subtitle = "Administrador";
     $meta = "";
     $css = "";
-    $js = [];
+    $js = "";
     $actions_pagebar = array('nuevo_registro' => '', 'tabla_consulta' => '', 'panel_control' => '');
-    $config = "";
+    $config = [];
     CommonHeader($path, $page_title, $meta, $css, $js, $objetivo, $actions_pagebar, $config);
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------// 
 
@@ -62,9 +62,10 @@
         // Datos del formulario
         $form =  array(
             array ('campo' => 'tasa_nomb', 'nombre' => 'Nombre', 'tipo_objeto' => 'input_text', 'tipo_dato' => 'cleartext'),
-            array ('campo' => 'tasa_mnda', 'nombre' => 'Mon&eacute;da', 'tipo_objeto' => 'textarea', 'tipo_dato' => 'cleartext'), 
-            array ('campo' => 'tasa_prec', 'nombre' => 'Factor', 'tipo_objeto' => 'input_number', 'tipo_dato' => 'float'), 
-            array ('campo' => 'tasa_estd', 'nombre' => 'Estado', 'tipo_objeto' => 'input_radio', 'tipo_dato' => 'bool', 'opcion0' => 'Inactivo', 'opcion1' => 'Activo'), 
+            array ('campo' => 'tasa_mnda', 'nombre' => 'Mon&eacute;da', 'tipo_objeto' => 'input_text', 'tipo_dato' => 'cleartext'), 
+            array ('campo' => 'tasa_cdgo', 'nombre' => 'C&oacute;digo', 'tipo_objeto' => 'input_text', 'tipo_dato' => 'cleartext'), 
+            array ('campo' => 'tasa_fctr', 'nombre' => 'Factor', 'tipo_objeto' => 'input_number', 'tipo_dato' => 'float', 'step' => "0.01" ), 
+            array ('campo' => 'tasa_estd', 'nombre' => 'Estado', 'tipo_objeto' => 'input_radio', 'tipo_dato' => 'bool', 'opcion0' => 'Inactivo', 'opcion1' => 'Activo'),
         );
 
         // Switch para las opciones e lista, nuevo registro, eliminar, modificar, ver detalles
@@ -75,14 +76,15 @@
             case "listar":
                 if ($permisos['cons'] == TRUE){
                     $id_tabla = FALSE;
-                    $sql = "SELECT * FROM tbla_tasa ORDER BY tasa_freg DESC";
+                    $sql = $sql = "SELECT * FROM tbla_tasa ORDER BY tasa_freg DESC";
                     $legend = $page_title;
                     $dt_acciones = array('editar' => '', 'eliminar' => '', 'auditoria' => '');
                     $datatable = array(
                         array('nombre' => 'Nombre', 'width' => '', 'campo' => 'tasa_nomb', 'formato' => 'normal'), 
                         array('nombre' => 'Mon&eacute;da', 'width' => '', 'campo' => 'tasa_mnda', 'formato' => 'normal'), 
+                        array('nombre' => 'Factor', 'width' => '', 'campo' => 'tasa_fctr', 'formato' => 'normal'), 
                         array('nombre' => 'Estado', 'width' => '', 'campo' => 'tasa_estd', 'formato' => 'radio', 'opcion0' => 'Inactivo', 'opcion1' => 'Activo'), 
-                        array('nombre' => 'Fecha de ingreso', 'width' => '', 'campo' => 'tasa_freg', 'formato' => 'datetime'), 
+                        array('nombre' => 'Fecha de ingreso', 'width' => '', 'campo' => 'tasa_freg', 'formato' => 'datetime'),  
                     );
                     DataTable($path, $sql, $objetivo, $dt_acciones,  $datatable, $config);
                 }
